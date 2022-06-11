@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Descargar el paquete de D3 -->
+    <link rel="stylesheet" href="estilos.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- Generar una funcion-->
@@ -35,14 +36,48 @@
                     //y se concatena con el texto existente
                     +
                     d3.select("p").attr("descr")
+
+                    
                 ).
+            // se modifica el stylo
             style("font-size", function(){return "40px";});
-}
+
+            // tambien se puede modificar varios elmentos a la vez
+
+            d3.selectAll("div#estaticos")
+            .attr("class", "blue box");
+
+            // se puede iterar por los objetos para personalizar los cambios
+            
+            d3.selectAll("div#dinamicos")
+                .attr("class", "red box")
+                .each(function (d, i) {
+                d3.select(this).append("h1").text(i);
+                });
+                }
+
+            // seleccionar subelementos
+            d3.select("#section2")
+            .select("div").attr("class", "zzz");
+            
+            d3.select("#section1 > div").attr("class", "zzz");
+            
         
         </script>
 </head>
 <!-- Siempre debe empezar en body draw()-->
 <body onload="draw()">
     <p id="target" descr="descriptor"></p>
+    <section id="section1">
+        <div id="estaticos"></div>
+        <div id="estaticos"></div>
+        <div id="estaticos"></div>
+    </section>
+    <section id="section2">
+        <div id="dinamicos"></div>
+        <div id="dinamicos"></div>
+        <div id="dinamicos"></div>
+    </section>
+
 </body>
 </html>
