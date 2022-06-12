@@ -18,7 +18,8 @@
     color: #f0f8ff;
     }
 
-.zzz {
+#zzz {
         background-color: #e9267a;
-        color: #f0f8ff;
+        color: hsl(208, 56%, 47%);
+        text-align: center;
         }

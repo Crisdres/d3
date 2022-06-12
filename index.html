@@ -1,83 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Descargar el paquete de D3 -->
-    <link rel="stylesheet" href="estilos.css">
+    <script src="codigo.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-
-    <!-- Generar una funcion-->
-    <script type="text/javascript">
-        // delcaracion de funcion
-        function draw(){
-            // selecciona la etiqueta body
-            d3.select("body").
-            // y añade una etiqueta h1
-            append("h1").
-            // finalmente inserta un texto
-            text("Párrafo nuevo");
-
-            // utilizando un id para apuntar a la etiqueta
-            d3.select("p#target").
-            text("Añadiendo contenido ")
-
-            // se crea un atributo en las etiquetas p (similar a id y class)
-            d3.select("p").attr("descr", "primer_descriptor");
-            // Se apunta a la etiqeuta
-            d3.select("p#target").
-            // se modifica su texto
-            text(
-                    // se selecciona la etiqueta p y su texto ya existente
-                    d3.select("p").text()
-                    // se extra el texto contenido en el atributo descr 
-                    //y se concatena con el texto existente
-                    +
-                    d3.select("p").attr("descr")
-
-                    
-                ).
-            // se modifica el stylo
-            style("font-size", function(){return "40px";});
-
-            // tambien se puede modificar varios elmentos a la vez
-
-            d3.selectAll("div#estaticos")
-            .attr("class", "blue box");
-
-            // se puede iterar por los objetos para personalizar los cambios
-            
-            d3.selectAll("div#dinamicos")
-                .attr("class", "red box")
-                .each(function (d, i) {
-                d3.select(this).append("h1").text(i);
-                });
-                }
-
-            // seleccionar subelementos
-            d3.select("#section2")
-            .select("div").attr("class", "zzz");
-            
-            d3.select("#section1 > div").attr("class", "zzz");
-            
-        
-        </script>
+    <link rel="stylesheet" href="estilos.css"/>
 </head>
-<!-- Siempre debe empezar en body draw()-->
 <body onload="draw()">
-    <p id="target" descr="descriptor"></p>
-    <section id="section1">
-        <div id="estaticos"></div>
-        <div id="estaticos"></div>
-        <div id="estaticos"></div>
-    </section>
-    <section id="section2">
-        <div id="dinamicos"></div>
-        <div id="dinamicos"></div>
-        <div id="dinamicos"></div>
-    </section>
 
+</body>
+    <div id="xxxx">
+        <p id="pp1">hola</p>
+        
+        <p id="pp1">señor</p>
+        
+        <p class="pp1">papu</p>
+        
+        <p class="pp1">popo</p>
+        
+    </div>
+    <div>
+        <p id="pp1">holax</p>
+        
+        <p id="pp1">señorx</p>
+        
+        <p class="pp1">papux</p>
+        
+        <p class="pp1">popox</p>
+        
+    </div>
 </body>
 </html>
